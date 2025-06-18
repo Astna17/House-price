@@ -34,3 +34,27 @@ Explorer les données brutes pour comprendre la structure du dataset (`house_pri
 
 ###  Ce qui a été retiré
 - `summarytools` a été supprimé pour éviter des erreurs liées aux dépendances système lors de l’installation sous Linux.
+
+
+##  US03 – Nettoyage des données
+
+###  Objectif
+Nettoyer les données du fichier `price_house_clean_base.Rds` pour préparer l’analyse statistique et les modèles.
+
+###  Source
+- `data/interim/price_house_clean_base.Rds`
+
+###  Étapes réalisées
+- Analyse des valeurs manquantes avec `colSums(is.na())`
+- Suppression automatique des colonnes contenant plus de 30% de valeurs manquantes (aucune trouvée)
+- Imputation des valeurs manquantes (aucune détectée)
+- Conversion des colonnes `character` en `factor`
+- Détection et suppression des doublons (aucun trouvé)
+- Sauvegarde du jeu de données nettoyé en `.Rds` et `.csv`
+
+###  Fichiers générés
+- `data/clean/price_house_clean_ready.Rds`
+- `data/clean/price_house_clean_ready.csv`
+
+###  Packages utilisés
+- `dplyr`, `readr`
